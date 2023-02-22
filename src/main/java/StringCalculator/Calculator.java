@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Calculator {
 
-    StringParsing stringParsing;
+    StringParsing stringParsing = new StringParsing();
 
 
     public int add(int a, int b) {
@@ -21,39 +21,34 @@ public class Calculator {
     }
 
     public int divide(int a, int b) {
-        try {
-            return a/b;
-        } catch (Exception e) {
-            System.out.println("값을 나눌 수 없습니다.");
-        }
-
-        return 0;
+        return a/b;
     }
 
     public int calculate(int i, char s, int j) {
-        int num = 0;
-        switch (s) {
-            case '+':
-                num = add(i,j);
-            case '-':
-                num = subtract(i,j);
-            case '*':
-                num = multiple(i,j);
-            case '/':
-                num = divide(i,j);
-        }
-        return num;
+
+        if(s == '+') return add(i, j);
+        if(s == '-') return subtract(i, j);
+        if(s == '*') return multiple(i, j);
+        if(s == '/') return divide(i, j);
+        return 0;
     }
 
-
     public int calculateString(String str) {
-        stringParsing = new StringParsing();
-
-        String[] strList = stringParsing.seperate(str);
+        String[] strList = stringParsing.seperateToArray(str);
         int num = stringParsing.parsingToInt(strList[0]);
 
         for(int i=0; i<strList.length-2; i+=2){
             num = calculate(num, strList[i+1].charAt(0), stringParsing.parsingToInt(strList[i+2]));
+        }
+
+        return num;
+    }
+
+    public int calculateString2(String[] strArray) {
+        int num = stringParsing.parsingToInt(strArray[0]);
+
+        for(int i=0; i<strArray.length-2; i+=2){
+            num = calculate(num, strArray[i+1].charAt(0), stringParsing.parsingToInt(strArray[i+2]));
         }
 
         return num;
