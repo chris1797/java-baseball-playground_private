@@ -11,21 +11,17 @@ public class Calculator {
     public int add(int a, int b) {
         return a+b;
     }
-
     public int subtract(int a, int b) {
         return a-b;
     }
-
     public int multiple(int a, int b) {
         return a*b;
     }
-
     public int divide(int a, int b) {
         return a/b;
     }
 
     public int calculate(int i, char s, int j) {
-
         if(s == '+') return add(i, j);
         if(s == '-') return subtract(i, j);
         if(s == '*') return multiple(i, j);
