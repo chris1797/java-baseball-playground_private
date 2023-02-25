@@ -32,6 +32,8 @@ public class Baseball {
     public void baseball() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("숫자를 입력해 주세요. : ");
+        System.out.print("숫자를 입력해 주세요. : ");
+        String value = scanner.nextLine();
+
     }
 }
