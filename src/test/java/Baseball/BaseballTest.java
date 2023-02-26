@@ -27,4 +27,10 @@ class BaseballTest {
         String str = "123";
         int[] inputNums = baseball.inputNums(str);
     }
+
+
+    @Test
+    void baseball() {
+
+    }
 }
