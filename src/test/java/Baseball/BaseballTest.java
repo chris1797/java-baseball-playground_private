@@ -31,6 +31,8 @@ class BaseballTest {
 
     @Test
     void baseball() {
+        String input = "123";
+        baseball.baseball();
 
     }
 }
