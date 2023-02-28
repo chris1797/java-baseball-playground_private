@@ -30,8 +30,9 @@ class BaseballTest {
 
 
     @Test
-    void baseball() {
+    void baseball() throws Exception {
         String input = "123";
+
         baseball.baseball();
 
     }

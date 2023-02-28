@@ -45,6 +45,7 @@ public class Baseball {
 
         while(true) {
             System.out.print("숫자를 입력해 주세요. : ");
+            System.out.print("1볼 1스트라이크");
             String value = scanner.nextLine();
             this.inputNums = parsingToIntArray(value);
             matchCnt = matchNum();
