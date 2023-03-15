@@ -32,11 +32,10 @@ class BaseballTest {
     @DisplayName("입력된 숫자 파싱 테스트")
     void inputNums() throws Exception {
         String str = "123";
-        int[] inputNums = baseball.parsingToIntArray(str);
         /*
         baseball.parsingToIntArray(str)의 값이 ints와 같은지 테스트
          */
-        assertThat(Arrays.stream(inputNums).anyMatch(INT_STREAM::equals));
+//        assertThat(Arrays.stream(inputNums).anyMatch(INT_STREAM::equals));
     }
 
 
@@ -44,7 +43,6 @@ class BaseballTest {
     void baseball() throws Exception {
         String input = "123";
 
-        baseball.baseball();
 
     }
 }

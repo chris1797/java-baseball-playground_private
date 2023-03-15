@@ -1,5 +1,8 @@
 package Baseball;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Baseball {
@@ -18,26 +21,37 @@ public class Baseball {
     }
 
     // 입력받은 문자열 배열에 담기
-    public int[] parsingToIntArray(String str) throws Exception {
-        if(str.length() > 3) throw new Exception();
+    public void parsingToIntArray(String str) throws Exception {
+        if(str.length() != 3) throw new Exception("3자리 숫자가 아닙니다!");
 
-        this.inputNums = new int[3];
+        int[] intArray = new int[3];
         for(int i=0; i<3; i++) {
             int num = Character.getNumericValue(str.charAt(i));
-            inputNums[i] = num;
+            intArray[i] = num;
         }
-        return inputNums;
+        this.inputNums = intArray;
     }
 
-    public int matchNum() {
-        int matchCount = 0;
-        if(ranNums[0] == inputNums[0]) matchCount++;
-        if(ranNums[1] == inputNums[1]) matchCount++;
-        if(ranNums[2] == inputNums[2]) matchCount++;
+    /*
+    랜덤숫자배열과 입력숫자배열 매칭
+     */
+    public String matchNum(String str) throws Exception {
+        parsingToIntArray(str);
+
+        int strikeCnt = 0;
+        int ballCont = 0;
+
+        for(int i=0; i<3; i++) {
+            if(ranNums[i] == inputNums[i]) strikeCnt++;
+            if(ranNums[i] != inputNums[i] && Arrays.stream(ranNums).anyMatch(int));
+        }
 
         return matchCount;
     }
 
+    /*
+     숫자야구게임 실행
+     */
     public void baseball() throws Exception {
         createRandomNum();
         int matchCnt = 0;
@@ -45,6 +59,7 @@ public class Baseball {
 
         while(true) {
             System.out.print("숫자를 입력해 주세요. : ");
+            String intVal = (String)scanner.nextLine();
             System.out.print("1볼 1스트라이크");
             String value = scanner.nextLine();
             this.inputNums = parsingToIntArray(value);
