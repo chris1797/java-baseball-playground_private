@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 
+    // 계산기 로직
     public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
@@ -49,6 +50,7 @@ public class Main {
         }
     }
 
+    // 멀티스레드 구구단 로직
     public static void main2(String[] args) throws Exception {
         System.out.println("멀티스레드 구구단 시작");
         Thread t1 = new Thread(new Runnable() {
