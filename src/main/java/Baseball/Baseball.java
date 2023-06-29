@@ -58,7 +58,7 @@ public class Baseball {
     }
 
     /*
-     숫자야구게임 실행
+      숫자야구게임 실행
      */
     public void gameStart() throws Exception {
 
